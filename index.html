@@ -9,12 +9,11 @@
 </head>
 <body class="shower list">
 	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
+		<h1>State of the Art in CSS</h1>
 	</header>
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
+		<h2>State of the Art in CSS</h2>
+		<p>Stuff</p>
 		<img src="pictures/cover.jpg" alt="" class="cover">
 		<!--
 			To apply styles to the certain slides
@@ -40,139 +39,164 @@
 		</style>
 	</section>
 	<section class="slide">
-		<h2>Shower key features</h2>
+		<h2>Quick retrospective</h2>
 		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-	</section>
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
+			<li>
+				CSS was pushed by Microsoft (<a href="https://eager.io/blog/the-languages-which-almost-were-css/">cool story about it</a>)
 			</li>
-			<li>Look, seven rows exactly!</li>
+			<li>
+				Support for media queries, imports (ability to do several files)
+			</li>
+			<li>
+				Methodologies – BEM, SMACSS, OOCSS, ACSS, etc
+			</li>
+			<li>
+				Preprocessors – ability to reuse and write more sane code
+			</li>
+			<li>
+				CSS modules (in some way or another)
+			</li>
+			<li>
+				Inline CSS in JS; CSS in JS
+			</li>
 		</ol>
+		<p class="note">We might end up with another LISP in browser for styling</p>
 	</section>
 	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
-	</section>
-	<section class="slide">
-		<h2>Code samples</h2>
-		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
-		</pre>
-	</section>
-	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
-	</section>
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<img src="pictures/picture.jpg" alt="" class="cover">
-		<style>
-			#picture h2 {
-				color:#FFF;
-				}
-		</style>
-	</section>
-	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
-	</section>
-	<section class="slide">
-		<h2>Inner navigation</h2>
+		<h2>Main problems of CSS</h2>
 		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
+			<li>
+				Specifity
+			</li>
+			<li>
+				Fragile code
+			</li>
+			<li>
+				Hard to organize files
+			</li>
+			<li>
+				Verbosity (solved by preprocessors)
+			</li>
+			<li>
+				No possibility to share variables with application code
+			</li>
+		</ol>
+		<p class="note">All methodologies fight with it (not very successfully)</p>
+	</section>
+	<section class="slide">
+		<h2>CSS modules</h2>
+		<ol>
+			<li>
+				All about specifity
+			</li>
+			<li>
+				Create unique styles for you behind the scenes
+			</li>
+			<li>
+				Allow to require class names from different files
+			</li>
+			<li>
+				We don't lose anything comparing to CSS, but we can use the same <mark>title</mark>, <mark>content</mark>, <mark>image</mark> class names everywhere
+			</li>
+			<li>
+				<strong>But!</strong> Same problems as CSS – we can't share variables.
+			</li>
+			<li>
+				The main problem is no theming and sharing
+			</li>
+			<p class="note">Almost ideal for standalone projects</p>
 		</ol>
 	</section>
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
+	<section class="slide">
+		<h2>Our requirements</h2>
+		<ol>
+			<li>Theming (dynamic theming is desired)</li>
+			<li>Independent components (packages) should be easily styled and use theme</li>
+			<li>
+				No specifity hell
+			</li>
+			<li>
+				Full sharing of variables with application code
+			</li>
+			<li>
+				Would be nice to have:
+				<ol>
+					<li>
+						CSS pseudoclasses
+					</li>
+					<li>
+						Actual classnames with some semantics
+					</li>
+					<li>
+						1 level inheritance (my personal preference)
+					</li>
+				</ol>
+			</li>
+		</ol>
 	</section>
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
+	<section class="slide">
+		<h2>Radium and inline-css</h2>
+		<ol>
+			<li>
+				Describe all css in js
+			</li>
+			<li>
+				No "classes" – no inheritance, even in theory
+			</li>
+			<li>
+				Cumbersome pseudoclasses (implemented via React state of HOC)
+			</li>
+			<li>
+				Manual styles merge (via objects)
+			</li>
+			<li>
+				Theming out of the box; but to achieve our requirements, we have to add parent React class and follow few conventions
+			</li>
+			<li>
+				Non-reliable hot reload (based on our experience)
+			</li>
+		</ol>
+	</section>
+	<section class="slide">
+		<h2>Typical example</h2>
+		<img src="pictures/radium-ex.png" />
+	</section>
+	<section class="slide">
+		<h2><a href="https://github.com/FormidableLabs/radium/issues/788">Development is stale</a></h2>
+		<img src="pictures/radium-stale.png" />
+	</section>
+	<section class="slide">
+		<h2>
+			CSS in JS
 		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
+		<ol>
+			<li>
+				This approach creates actual stylesheet and put new classes there
+			</li>
+			<li>
+				Hot reload (in theory) is much more reliable, because part of the job is done via browser – need to be investigated
+			</li>
+			<li>
+				Pseudoclasses are native, but no inheritance
+			</li>
+			<li>
+				Theming is pretty easy
+			</li>
+			<li>
+				Examples:
+				<ol>
+					<li>
+						<a href="https://github.com/styled-components/styled-components">Styled components</a>
+					</li>
+					<li>
+						<a href="https://github.com/Khan/aphrodite">Aphrodite</a>
+					</li>
+				</ol>
+			</li>
+		</ol>
 	</section>
 	<p class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
+		<a href="https://github.com/Bloomca/CSS-JS-State-of-the-Art">Fork me on GitHub</a>
 	</p>
 	<!--
 		To hide progress bar from entire presentation
