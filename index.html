@@ -1,232 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Shower Presentation Engine</title>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+  <title>Shower Presentation Engine</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
 </head>
 <body class="shower list">
-	<header class="caption">
-		<h1>State of the Art in CSS</h1>
-	</header>
-	<section class="slide" id="cover">
-		<h2>State of the Art in CSS</h2>
-		<p>Stuff</p>
-		<img src="pictures/cover.jpg" alt="" class="cover">
-		<!--
-			To apply styles to the certain slides
-			set slide ID to get needed elements
-			-->
-		<style>
-			#cover h2 {
-				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
-				font-size:70px;
-				}
-			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
-		</style>
-	</section>
-	<section class="slide">
-		<h2>Quick retrospective</h2>
-		<ol>
-			<li>
-				CSS was pushed by Microsoft (<a href="https://eager.io/blog/the-languages-which-almost-were-css/">cool story about it</a>)
-			</li>
-			<li>
-				Support for media queries, imports (ability to do several files)
-			</li>
-			<li>
-				Methodologies – BEM, SMACSS, OOCSS, ACSS, etc
-			</li>
-			<li>
-				Preprocessors – ability to reuse and write more sane code
-			</li>
-			<li>
-				CSS modules (in some way or another)
-			</li>
-			<li>
-				Inline CSS in JS; CSS in JS
-			</li>
-		</ol>
-		<p class="note">We might end up with another LISP in browser for styling</p>
-	</section>
-	<section class="slide">
-		<h2>Main problems of CSS</h2>
-		<ol>
-			<li>
-				Specifity
-			</li>
-			<li>
-				Fragile code
-			</li>
-			<li>
-				Hard to organize files
-			</li>
-			<li>
-				Verbosity (solved by preprocessors)
-			</li>
-			<li>
-				No possibility to share variables with application code
-			</li>
-		</ol>
-		<p class="note">All methodologies fight with it (not very successfully)</p>
-	</section>
-	<section class="slide">
-		<h2>CSS modules</h2>
-		<ol>
-			<li>
-				All about specifity
-			</li>
-			<li>
-				Create unique styles for you behind the scenes
-			</li>
-			<li>
-				Allow to require class names from different files
-			</li>
-			<li>
-				We don't lose anything comparing to CSS, but we can use the same <mark>title</mark>, <mark>content</mark>, <mark>image</mark> class names everywhere
-			</li>
-			<li>
-				<strong>But!</strong> Same problems as CSS – we can't share variables.
-			</li>
-			<li>
-				The main problem is no theming and sharing
-			</li>
-			<p class="note">Almost ideal for standalone projects</p>
-		</ol>
-	</section>
-	<section class="slide">
-		<h2>Our requirements</h2>
-		<ol>
-			<li>Theming (dynamic theming is desired)</li>
-			<li>Independent components (packages) should be easily styled and use theme</li>
-			<li>
-				No specifity hell
-			</li>
-			<li>
-				Full sharing of variables with application code
-			</li>
-			<li>
-				Would be nice to have:
-				<ol>
-					<li>
-						CSS pseudoclasses
-					</li>
-					<li>
-						Actual classnames with some semantics
-					</li>
-					<li>
-						1 level inheritance (my personal preference)
-					</li>
-				</ol>
-			</li>
-		</ol>
-	</section>
-	<section class="slide">
-		<h2>Radium and inline-css</h2>
-		<ol>
-			<li>
-				Describe all css in js
-			</li>
-			<li>
-				No "classes" – no inheritance, even in theory
-			</li>
-			<li>
-				Cumbersome pseudoclasses (implemented via React state of HOC)
-			</li>
-			<li>
-				Manual styles merge (via objects)
-			</li>
-			<li>
-				Theming out of the box; but to achieve our requirements, we have to add parent React class and follow few conventions
-			</li>
-			<li>
-				Non-reliable hot reload (based on our experience)
-			</li>
-		</ol>
-	</section>
-	<section class="slide">
-		<h2>Typical example</h2>
-		<img src="pictures/radium-ex.png" />
-	</section>
-	<section class="slide">
-		<h2><a href="https://github.com/FormidableLabs/radium/issues/788">Development is stale</a></h2>
-		<img src="pictures/radium-stale.png" />
-	</section>
-	<section class="slide">
-		<h2>
-			CSS in JS
-		</h2>
-		<ol>
-			<li>
-				This approach creates actual stylesheet and put new classes there
-			</li>
-			<li>
-				Hot reload (in theory) is much more reliable, because part of the job is done via browser – need to be investigated
-			</li>
-			<li>
-				Pseudoclasses are native, but no inheritance
-			</li>
-			<li>
-				Theming is pretty easy
-			</li>
-			<li>
-				Examples:
-				<ol>
-					<li>
-						<a href="https://github.com/styled-components/styled-components">Styled components</a>
-					</li>
-					<li>
-						<a href="https://github.com/Khan/aphrodite">Aphrodite</a>
-					</li>
-					<li>
-						<a href="https://github.com/threepointone/glamor">Glamor</a>
-					</li>
-				</ol>
-			</li>
-		</ol>
-	</section>
-	<section class="slide">
-		<h2>
-			Styled Components
-		</h2>
-		<ol>
-			<li>
-				The most "hip" technology, has the biggest community power
-			</li>
-			<li>
-				Also, it is the youngest technology, so errors are more than possible
-			</li>
-			<li>
-				Uses template literals, therefore quite unfamiliar syntax
-			</li>
-			<li>
-				We would have to change our style
-			</li>
-		</ol>
-	</section>
-	<p class="badge">
-		<a href="https://github.com/Bloomca/CSS-JS-State-of-the-Art">Fork me on GitHub</a>
-	</p>
-	<!--
-		To hide progress bar from entire presentation
-		just remove “progress” element.
-		-->
-	<div class="progress"></div>
-	<script src="node_modules/shower-core/shower.min.js"></script>
-	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
-	<!-- Photos by John Carey, fiftyfootshadows.net -->
+  <header class="caption">
+    <h1>State of the Art in CSS</h1>
+  </header>
+  <section class="slide" id="cover">
+    <h2>State of the Art in CSS</h2>
+    <p>My lazy research on current approaches in styling</p>
+    <img src="pictures/cover.jpg" alt="" class="cover">
+    <!--
+      To apply styles to the certain slides
+      set slide ID to get needed elements
+      -->
+    <style>
+      #cover h2 {
+        margin:30px 0 0;
+        color:#FFF;
+        text-align:center;
+        font-size:70px;
+        }
+      #cover p {
+        margin:10px 0 0;
+        text-align:center;
+        color:#FFF;
+        font-style:italic;
+        font-size:20px;
+        }
+        #cover p a {
+          color:#FFF;
+          }
+    </style>
+  </section>
+  <section class="slide">
+    <h2>Quick retrospective</h2>
+    <ol>
+      <li>
+        CSS was pushed by Microsoft (<a href="https://eager.io/blog/the-languages-which-almost-were-css/">cool story about it</a>)
+      </li>
+      <li>
+        Support for media queries, imports (ability to do several files)
+      </li>
+      <li>
+        Methodologies – BEM, SMACSS, OOCSS, ACSS, etc
+      </li>
+      <li>
+        Preprocessors – ability to reuse and write more sane code
+      </li>
+      <li>
+        CSS modules (in some way or another)
+      </li>
+      <li>
+        Inline CSS in JS; CSS in JS
+      </li>
+    </ol>
+    <p class="note">We might end up with another LISP in browser for styling</p>
+  </section>
+  <section class="slide">
+    <h2>Main problems of CSS</h2>
+    <ol>
+      <li>
+        Specifity
+      </li>
+      <li>
+        Fragile code
+      </li>
+      <li>
+        Hard to organize files
+      </li>
+      <li>
+        Verbosity (solved by preprocessors)
+      </li>
+      <li>
+        No possibility to share variables with application code
+      </li>
+    </ol>
+    <p class="note">All methodologies fight with it (not very successfully)</p>
+  </section>
+  <section class="slide">
+    <h2>CSS modules</h2>
+    <ol>
+      <li>
+        All about specifity
+      </li>
+      <li>
+        Create unique styles for you behind the scenes
+      </li>
+      <li>
+        Allow to require class names from different files
+      </li>
+      <li>
+        We don't lose anything comparing to CSS, but we can use the same <mark>title</mark>, <mark>content</mark>, <mark>image</mark> class names everywhere
+      </li>
+      <li>
+        <strong>But!</strong> Same problems as CSS – we can't share variables.
+      </li>
+      <li>
+        The main problem is no theming and sharing
+      </li>
+      <p class="note">Almost ideal for standalone projects</p>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Our requirements</h2>
+    <ol>
+      <li>Theming (dynamic theming is desired)</li>
+      <li>Independent components (packages) should be easily styled and use theme</li>
+      <li>
+        No specifity hell
+      </li>
+      <li>
+        Full sharing of variables with application code
+      </li>
+      <li>
+        Would be nice to have:
+        <ol>
+          <li>
+            CSS pseudoclasses
+          </li>
+          <li>
+            Actual classnames with some semantics
+          </li>
+          <li>
+            1 level inheritance (my personal preference)
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Radium and inline-css</h2>
+    <ol>
+      <li>
+        Describe all css in js
+      </li>
+      <li>
+        No "classes" – no inheritance, even in theory
+      </li>
+      <li>
+        Cumbersome pseudoclasses (implemented via React state of HOC)
+      </li>
+      <li>
+        Manual styles merge (via objects)
+      </li>
+      <li>
+        Theming out of the box; but to achieve our requirements, we have to add parent React class and follow few conventions
+      </li>
+      <li>
+        Non-reliable hot reload (based on our experience)
+      </li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>Typical example</h2>
+    <img src="pictures/radium-ex.png" />
+  </section>
+  <section class="slide">
+    <h2><a href="https://github.com/FormidableLabs/radium/issues/788">Development is stale</a></h2>
+    <img src="pictures/radium-stale.png" />
+  </section>
+  <section class="slide">
+    <h2>
+      CSS in JS
+    </h2>
+    <ol>
+      <li>
+        This approach creates actual stylesheet and put new classes there
+      </li>
+      <li>
+        Hot reload (in theory) is much more reliable, because part of the job is done via browser – need to be investigated
+      </li>
+      <li>
+        Pseudoclasses are native, but no inheritance
+      </li>
+      <li>
+        Theming is pretty easy
+      </li>
+      <li>
+        Examples:
+        <ol>
+          <li>
+            <a href="https://github.com/styled-components/styled-components">Styled components</a>
+          </li>
+          <li>
+            <a href="https://github.com/Khan/aphrodite">Aphrodite</a>
+          </li>
+          <li>
+            <a href="https://github.com/threepointone/glamor">Glamor</a>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>
+      Styled Components
+    </h2>
+    <ol>
+      <li>
+        One of the creators is creator of CSS-modules
+      </li>
+      <li>
+        The most "hip" technology, has the biggest community power
+      </li>
+      <li>
+        Also, it is the youngest technology, so errors are more than possible
+      </li>
+      <li>
+        Uses template literals, therefore quite unfamiliar syntax
+      </li>
+      <li>
+        We have to change our style completely
+      </li>
+      <li>
+        They are working on nested selectors
+      </li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>How it looks like</h2>
+    <img src="pictures/styled_components_example.jpg" />
+  </section>
+  <section class="slide">
+    <h2>Theming</h2>
+    <img src="pictures/styled_components_example2.jpg" />
+  </section>
+  <section class="slide">
+    <h2>Theming</h2>
+    <img src="pictures/styled_components_example3.jpg" />
+  </section>
+  <section class="slide">
+    <h2>Media queries</h2>
+    <img src="pictures/styled_components_example4.jpg" />
+  </section>
+  <section class="slide">
+    <h2>Generated classes</h2>
+    <img src="pictures/styled_components_example5.jpg" />
+    <a href="https://github.com/styled-components/styled-components/pull/227" target="_blank">
+      They are working on it
+    </a>
+  </section>
+  <section class="slide">
+    <h2>
+      Aphrodite
+    </h2>
+    <ol>
+      <li>
+        Created in Khan Academy
+      </li>
+      <li>
+        More mature solution
+      </li>
+      <li>
+        They don't support children/parents and don't want to (there is a <a href="https://github.com/Khan/aphrodite/issues/10" target="_blank">hack</a> how to do it though)
+      </li>
+      <li>
+        They use classes under the hood, and they place it in their own <mark>style</mark> tag.
+      </li>
+      <li>
+        Looks very much like the Radium
+      </li>
+      <li>
+        Theming is possible, but it is not the best experience – and also we can't use variables in hovering
+      </li>
+    </ol>
+  </section>
+  <section class="slide">
+    <h2>How we define styles</h2>
+    <img src="pictures/aphrodite_example.jpg" />
+  </section>
+  <section class="slide">
+    <h2>How we use it inside code</h2>
+    <img src="pictures/aphrodite_example2.jpg" />
+  </section>
+  <section class="slide">
+    <h2>Our own solution?</h2>
+  </section>
+  <p class="badge">
+    <a href="https://github.com/Bloomca/CSS-JS-State-of-the-Art">Fork me on GitHub</a>
+  </p>
+  <!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+  <div class="progress"></div>
+  <script src="node_modules/shower-core/shower.min.js"></script>
+  <!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+  <!-- Photos by John Carey, fiftyfootshadows.net -->
 </body>
 </html>
